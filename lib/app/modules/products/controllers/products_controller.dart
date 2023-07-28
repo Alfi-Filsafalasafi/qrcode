@@ -1,23 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 
 class ProductsController extends GetxController {
-  //TODO: Implement ProductsController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  FirebaseFirestore firebase = FirebaseFirestore.instance;
+  Stream<QuerySnapshot<Map<String, dynamic>>> streamProduct() async* {
+    yield* firebase.collection("products").snapshots();
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

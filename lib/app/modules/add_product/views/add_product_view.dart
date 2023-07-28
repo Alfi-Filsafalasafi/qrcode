@@ -50,7 +50,7 @@ class AddProductView extends GetView<AddProductController> {
             TextField(
               controller: qtyC,
               focusNode: qtyFocusNode,
-              keyboardType: TextInputType.name,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 label: Text("Qty"),
                 border: OutlineInputBorder(
